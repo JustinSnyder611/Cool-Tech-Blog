@@ -26,9 +26,18 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/dashboard', withAuth, (req, res) => {
+router.get('/dashboard', (req, res) => {
   try {
     res.render('dashboard');
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+})
+
+router.get('/message', (req, res) => {
+  try {
+    res.render('message');
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
