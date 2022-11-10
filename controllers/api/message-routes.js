@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Message } = require('../../models');
+const { Message } = require('../../models/');
 
-router.post('/', async (req, res) => {
+router.post('/post', async (req, res) => {
     try {
         const messageData = await Message.create({
             message: req.body.message,

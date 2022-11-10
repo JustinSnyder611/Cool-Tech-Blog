@@ -4,7 +4,7 @@ const messagePost = async (event) => {
     const message = document.querySelector('#message-input').value.trim();
 
     if (message) {
-        const response = await fetch('/api/message-routes', {
+        const response = await fetch('/api/message/post', {
             method: 'POST',
             body: JSON.stringify({ message }),
             headers: { 'Content-Type': 'application/json' },
@@ -17,7 +17,6 @@ const messagePost = async (event) => {
         }
     }
 };
-
 
 
 document
